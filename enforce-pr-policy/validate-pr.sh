@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-# Get source and target branch names
-source="${{ github.event.pull_request.head.ref }}"
-target="${{ github.event.pull_request.base.ref }}"
+# Replace GitHub Actions expressions with environment variables
+source="${GITHUB_HEAD_REF}"
+target="${GITHUB_BASE_REF}"
 
 echo "Source branch: $source"
 echo "Target branch: $target"
